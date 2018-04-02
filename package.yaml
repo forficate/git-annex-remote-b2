@@ -1,0 +1,64 @@
+name:                git-annex-remote-b2
+version:             0.1.0.0
+github:              "githubuser/git-annex-remote-b2"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2018 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/githubuser/git-annex-remote-b2#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- bytestring
+- classy-prelude
+- either
+- filepath
+- free
+- lens
+- lens-aeson
+- parsec
+- text
+- transformers
+- wreq
+
+default-extensions:
+  - OverloadedStrings
+
+library:
+  source-dirs: src
+
+executables:
+  git-annex-remote-b2-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    dependencies:
+    - git-annex-remote-b2
+
+tests:
+  git-annex-remote-b2-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - git-annex-remote-b2
